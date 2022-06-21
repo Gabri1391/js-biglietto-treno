@@ -24,22 +24,22 @@ if (isNaN(NumberKm) || isNaN(UserAge)) {
 }
 
 // 4- Creare la funzione per calcolare il prezzo al km
-const price = parseInt(0.21 * (NumberKm));
+let price = 0.21 * NumberKm;
 console.log(price);
 
 // 5- Istruzioni condizionali per eventuali sconti sul biglietto
-if (UserAge >= 18){
-    console.log(parseInt((price) - (price * 20 / 100)));
+if (UserAge <= 18){
+    price = price * 0.8;
 }
-
-const DiscountUnder18 = (price) - (price * 20 / 100);
 
 if (UserAge >= 65){
-    console.log(parseInt((price) - (price * 40 / 100)));
+    price = price * 0.6;
 }
 
-const DiscountOver65 = (price) - (price * 40 / 100);
+const showPrice = price.toFixed(2);
 
 // 6- Stampare il risultato in pagina
 
-TicketParagrapf.innerHTML = `Il prezzo del suo biglietto é di <strong>${price}€.` 
+TicketParagrapf.innerHTML = `Il prezzo del suo biglietto é di <strong>€${showPrice}</strong>.` 
+
+
