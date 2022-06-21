@@ -1,13 +1,14 @@
 // 1- Chiedere quanti km vuole percorrere il passeggero
 // 2- Chiedere l'età al passeggero
 // 3- Validazione
-// 4- Creare la funzione per calcolare il prezzo al km
+// 4- Creare la funzione per calcolare il prezzo del biglietto al km senza sconti
 // 5- Istruzioni condizionali per eventuali sconti sul biglietto
-// 6- calcolare il prezzo del biglietto
-// 7- Stampare il risultato in pagina
+// 6- Stampare il risultato in pagina
 
 
 
+
+const TicketParagrapf = document.getElementById('ticket-price');
 
 // 1- Chiedere quanti km vuole percorrere il passeggero
 const NumberKm = parseInt(prompt('Quanti km vuole percorrere?','100'));
@@ -30,3 +31,15 @@ console.log(price);
 if (UserAge >= 18){
     console.log(parseInt((price) - (price * 20 / 100)));
 }
+
+const DiscountUnder18 = (price) - (price * 20 / 100);
+
+if (UserAge >= 65){
+    console.log(parseInt((price) - (price * 40 / 100)));
+}
+
+const DiscountOver65 = (price) - (price * 40 / 100);
+
+// 6- Stampare il risultato in pagina
+
+TicketParagrapf.innerHTML = `Il prezzo del suo biglietto é di <strong>${price}€.` 
